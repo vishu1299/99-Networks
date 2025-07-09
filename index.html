@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Panel Layout</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="min-vh-100 bg-light">
+    <!-- Header -->
+    <header class="header-custom">
+      <div class="d-flex align-items-center justify-content-between w-100">
+        <div class="d-flex align-items-center">
+          <img src="/images/logo.png" alt="Company Logo" class="logo" />
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-custom-green">Invite Staff</button>
+          <button class="btn btn-custom-green">Invite Engineer</button>
+          <button class="btn btn-outline-custom">
+            <i class="fas fa-sign-out-alt me-2"></i>
+            Logout
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Centered Layout -->
+    <div class="d-flex justify-content-center mt-4">
+      <div class="main-container">
+        <!-- Sidebar -->
+        <div class="sidebar-container">
+          <div class="sidebar-content">
+            <!-- User Profile Header -->
+            <div class="profile-card">
+              <div class="profile-header">
+                <div class="profile-bg"></div>
+                <div class="profile-info">
+                  <div class="profile-avatar">
+                    <img
+                      src="/images/profile.png"
+                      alt="Alex Coal"
+                      class="avatar-img"
+                    />
+                  </div>
+                  <h2 class="profile-name">Alex Coal</h2>
+                  <p class="profile-date">Member since Jan 2024</p>
+                  <button class="btn-edit-profile">
+                    <i class="fas fa-edit"></i> Profile
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="nav-menu-container">
+              <div class="nav-menu">
+                <div class="nav-items">
+                  <!-- My Portfolio Dropdown -->
+                  <div class="nav-dropdown">
+                    <div
+                      class="nav-item dropdown-toggle"
+                      data-dropdown="portfolio"
+                    >
+                      <div class="d-flex align-items-center flex-grow-1">
+                        <i class="fas fa-user-circle nav-icon"></i>
+                        <span class="nav-text">My Portfolio</span>
+                      </div>
+                      <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </div>
+                    <div class="dropdown-content" id="portfolio-dropdown">
+                      <a
+                        href="#"
+                        class="dropdown-item active"
+                        data-page="job-posting"
+                      >
+                        <i class="fas fa-briefcase"></i>
+                        <span>Job Posting & Tracking</span>
+                      </a>
+                      <a
+                        href="#"
+                        class="dropdown-item"
+                        data-page="placement-management"
+                      >
+                        <i class="fas fa-users-cog"></i>
+                        <span>Placement Management</span>
+                      </a>
+                      <a
+                        href="#"
+                        class="dropdown-item"
+                        data-page="reports-analytics"
+                      >
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Reports & Analytics</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Profile Management -->
+                  <a href="#" class="nav-item" data-page="profile-management">
+                    <i class="fas fa-user-cog nav-icon"></i>
+                    <span class="nav-text">Profile Management</span>
+                  </a>
+
+                  <!-- Placement Dropdown -->
+                  <div class="nav-dropdown">
+                    <div
+                      class="nav-item dropdown-toggle"
+                      data-dropdown="placement"
+                    >
+                      <div class="d-flex align-items-center flex-grow-1">
+                        <i class="fas fa-briefcase nav-icon"></i>
+                        <span class="nav-text">Placement</span>
+                      </div>
+                      <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </div>
+                    <div class="dropdown-content" id="placement-dropdown">
+                      <a
+                        href="#"
+                        class="dropdown-item"
+                        data-page="enter-placement"
+                      >
+                        <i class="fas fa-user-plus"></i>
+                        <span>Enter Placement</span>
+                      </a>
+                      <a href="#" class="dropdown-item" data-page="project-end">
+                        <i class="fas fa-flag-checkered"></i>
+                        <span>Enter Project End</span>
+                      </a>
+                      <a
+                        href="#"
+                        class="dropdown-item"
+                        data-page="project-extensions"
+                      >
+                        <i class="fas fa-calendar-plus"></i>
+                        <span>Submit Project Extensions</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  <!-- Financials -->
+                  <a href="#" class="nav-item" data-page="financials">
+                    <i class="fas fa-wallet nav-icon"></i>
+                    <span class="nav-text">Financials</span>
+                  </a>
+
+                  <!-- Communication & Support -->
+                  <a href="#" class="nav-item" data-page="communication">
+                    <i class="fas fa-headset nav-icon"></i>
+                    <span class="nav-text">Communication & Support</span>
+                  </a>
+
+                  <!-- Change Request -->
+                  <a href="#" class="nav-item" data-page="change-request">
+                    <i class="fas fa-exchange-alt nav-icon"></i>
+                    <span class="nav-text">Change Request</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+          <div class="content-wrapper" id="main-content">
+            <!-- Job Posting & Tracking Content -->
+            <div id="job-posting-content" class="page-content active">
+              <div class="page-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h1 class="page-title">Job Posting & Tracking</h1>
+                    <p class="page-subtitle">
+                      Manage your job postings and track responses
+                    </p>
+                  </div>
+                  <button
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#createJobModal"
+                  >
+                    <i class="fas fa-plus me-2"></i>Create Job Posting
+                  </button>
+                </div>
+              </div>
+
+              <!-- Job Cards -->
+              <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                  <div class="job-card">
+                    <div class="job-card-header">
+                      <h5 class="job-title">Senior Frontend Developer</h5>
+                      <span class="job-status status-active">Active</span>
+                    </div>
+                    <div class="job-card-body">
+                      <p class="job-description">
+                        Looking for an experienced React developer...
+                      </p>
+                      <div class="job-meta">
+                        <div class="job-meta-item">
+                          <i class="fas fa-calendar"></i>
+                          <span>Posted: 2 days ago</span>
+                        </div>
+                        <div class="job-meta-item">
+                          <i class="fas fa-eye"></i>
+                          <span>45 Views</span>
+                        </div>
+                        <div class="job-meta-item">
+                          <i class="fas fa-users"></i>
+                          <span>12 Applications</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="job-card-footer">
+                      <button class="btn btn-outline-primary btn-sm">
+                        View Details
+                      </button>
+                      <button class="btn btn-primary btn-sm">Manage</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                  <div class="job-card">
+                    <div class="job-card-header">
+                      <h5 class="job-title">Backend Developer</h5>
+                      <span class="job-status status-pending">Pending</span>
+                    </div>
+                    <div class="job-card-body">
+                      <p class="job-description">
+                        Node.js developer with MongoDB experience...
+                      </p>
+                      <div class="job-meta">
+                        <div class="job-meta-item">
+                          <i class="fas fa-calendar"></i>
+                          <span>Posted: 1 week ago</span>
+                        </div>
+                        <div class="job-meta-item">
+                          <i class="fas fa-eye"></i>
+                          <span>23 Views</span>
+                        </div>
+                        <div class="job-meta-item">
+                          <i class="fas fa-users"></i>
+                          <span>8 Applications</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="job-card-footer">
+                      <button class="btn btn-outline-primary btn-sm">
+                        View Details
+                      </button>
+                      <button class="btn btn-primary btn-sm">Manage</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                  <div class="job-card">
+                    <div class="job-card-header">
+                      <h5 class="job-title">UI/UX Designer</h5>
+                      <span class="job-status status-closed">Closed</span>
+                    </div>
+                    <div class="job-card-body">
+                      <p class="job-description">
+                        Creative designer for mobile applications...
+                      </p>
+                      <div class="job-meta">
+                        <div class="job-meta-item">
+                          <i class="fas fa-calendar"></i>
+                          <span>Posted: 2 weeks ago</span>
+                        </div>
+                        <div class="job-meta-item">
+                          <i class="fas fa-eye"></i>
+                          <span>67 Views</span>
+                        </div>
+                        <div class="job-meta-item">
+                          <i class="fas fa-users"></i>
+                          <span>25 Applications</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="job-card-footer">
+                      <button class="btn btn-outline-primary btn-sm">
+                        View Details
+                      </button>
+                      <button class="btn btn-secondary btn-sm">Archive</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Placement Management Content -->
+            <div id="placement-management-content" class="page-content">
+              <div class="page-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h1 class="page-title">Placement Management</h1>
+                    <p class="page-subtitle">
+                      Manage placements, project ends, and extensions
+                    </p>
+                  </div>
+                  <button
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#createPlacementModal"
+                  >
+                    <i class="fas fa-plus me-2"></i>Add Placement
+                  </button>
+                </div>
+              </div>
+
+              <!-- Placement Cards -->
+              <div class="row g-4">
+                <div class="col-lg-6">
+                  <div class="placement-card">
+                    <div class="placement-header">
+                      <h5 class="placement-title">
+                        John Doe - Frontend Developer
+                      </h5>
+                      <span class="placement-status status-active">Active</span>
+                    </div>
+                    <div class="placement-body">
+                      <div class="placement-info">
+                        <div class="info-item">
+                          <strong>Company:</strong> Tech Solutions Inc.
+                        </div>
+                        <div class="info-item">
+                          <strong>Start Date:</strong> Jan 15, 2024
+                        </div>
+                        <div class="info-item">
+                          <strong>End Date:</strong> Dec 15, 2024
+                        </div>
+                        <div class="info-item">
+                          <strong>Salary:</strong> $75,000/year
+                        </div>
+                      </div>
+                    </div>
+                    <div class="placement-footer">
+                      <button class="btn btn-outline-warning btn-sm">
+                        Extend
+                      </button>
+                      <button class="btn btn-outline-danger btn-sm">
+                        End Project
+                      </button>
+                      <button class="btn btn-primary btn-sm">Details</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="placement-card">
+                    <div class="placement-header">
+                      <h5 class="placement-title">
+                        Jane Smith - Backend Developer
+                      </h5>
+                      <span class="placement-status status-ending"
+                        >Ending Soon</span
+                      >
+                    </div>
+                    <div class="placement-body">
+                      <div class="placement-info">
+                        <div class="info-item">
+                          <strong>Company:</strong> Digital Innovations
+                        </div>
+                        <div class="info-item">
+                          <strong>Start Date:</strong> Mar 1, 2024
+                        </div>
+                        <div class="info-item">
+                          <strong>End Date:</strong> Jan 30, 2025
+                        </div>
+                        <div class="info-item">
+                          <strong>Salary:</strong> $80,000/year
+                        </div>
+                      </div>
+                    </div>
+                    <div class="placement-footer">
+                      <button class="btn btn-outline-warning btn-sm">
+                        Extend
+                      </button>
+                      <button class="btn btn-outline-danger btn-sm">
+                        End Project
+                      </button>
+                      <button class="btn btn-primary btn-sm">Details</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reports & Analytics Content -->
+            <div id="reports-analytics-content" class="page-content">
+              <div class="page-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h1 class="page-title">Reports & Analytics</h1>
+                    <p class="page-subtitle">
+                      Access personal analytics and export reports
+                    </p>
+                  </div>
+                  <button class="btn btn-success">
+                    <i class="fas fa-download me-2"></i>Export to Excel
+                  </button>
+                </div>
+              </div>
+
+              <!-- Analytics Cards -->
+              <div class="row g-4 mb-4">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="analytics-card h-100">
+                    <div class="analytics-card-body">
+                      <div class="analytics-icon bg-primary">
+                        <i class="fas fa-briefcase"></i>
+                      </div>
+                      <div class="analytics-content">
+                        <div class="analytics-number">24</div>
+                        <div class="analytics-label">Jobs Posted</div>
+                        <div class="analytics-description">
+                          Active job postings across all categories
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="analytics-card h-100">
+                    <div class="analytics-card-body">
+                      <div class="analytics-icon bg-success">
+                        <i class="fas fa-users"></i>
+                      </div>
+                      <div class="analytics-content">
+                        <div class="analytics-number">156</div>
+                        <div class="analytics-label">Total Responses</div>
+                        <div class="analytics-description">
+                          Applications received from candidates
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="analytics-card h-100">
+                    <div class="analytics-card-body">
+                      <div class="analytics-icon bg-warning">
+                        <i class="fas fa-handshake"></i>
+                      </div>
+                      <div class="analytics-content">
+                        <div class="analytics-number">18</div>
+                        <div class="analytics-label">Successful Placements</div>
+                        <div class="analytics-description">
+                          Candidates successfully placed in positions
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Charts Section -->
+              <div class="row g-4">
+                <div class="col-lg-8">
+                  <div class="chart-card">
+                    <div class="chart-header">
+                      <h5>Monthly Performance</h5>
+                    </div>
+                    <div class="chart-body">
+                      <canvas id="performanceChart" height="300"></canvas>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="chart-card">
+                    <div class="chart-header">
+                      <h5>Job Status Distribution</h5>
+                    </div>
+                    <div class="chart-body">
+                      <canvas id="statusChart" height="300"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Enter Placement Content -->
+            <div id="enter-placement-content" class="page-content">
+              <div class="page-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h1 class="page-title">Enter Placement</h1>
+                    <p class="page-subtitle">
+                      Submit new placement with detailed project and client
+                      information
+                    </p>
+                  </div>
+                  <button
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#createPlacementModal"
+                  >
+                    <i class="fas fa-plus me-2"></i>Add New Placement
+                  </button>
+                </div>
+              </div>
+
+              <!-- Main Content -->
+              <div class="row g-4">
+                <div class="col-lg-8">
+                  <div class="analytics-card h-100">
+                    <div class="analytics-card-body">
+                      <div class="d-flex align-items-center mb-4">
+                        <div class="analytics-icon bg-primary me-3">
+                          <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div>
+                          <h4 class="mb-1">New Placement Entry</h4>
+                          <p class="text-muted mb-0">
+                            Submit new placement with detailed project and
+                            client information
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="row g-4">
+                        <div class="col-md-6">
+                          <div class="info-card">
+                            <div class="info-card-header">
+                              <i class="fas fa-user text-primary"></i>
+                              <h6>Candidate Details</h6>
+                            </div>
+                            <p class="text-muted small">
+                              Personal information, skills, and experience
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="info-card">
+                            <div class="info-card-header">
+                              <i class="fas fa-building text-success"></i>
+                              <h6>Client Information</h6>
+                            </div>
+                            <p class="text-muted small">
+                              Company details and project requirements
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="analytics-card h-100">
+                    <div class="analytics-card-body">
+                      <h5 class="mb-3">Quick Stats</h5>
+                      <div class="stat-item">
+                        <span class="stat-number">156</span>
+                        <span class="stat-label">Total Placements</span>
+                      </div>
+                      <div class="stat-item">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">This Month</span>
+                      </div>
+                      <div class="stat-item">
+                        <span class="stat-number">89</span>
+                        <span class="stat-label">Active Projects</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Enter Project End Content -->
+            <div id="project-end-content" class="page-content">
+              <div class="page-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h1 class="page-title">Enter Project End</h1>
+                    <p class="page-subtitle">
+                      Record project completion and finalize placement details
+                    </p>
+                  </div>
+                  <button class="btn btn-danger">
+                    <i class="fas fa-flag-checkered me-2"></i>End Project
+                  </button>
+                </div>
+              </div>
+
+              <!-- Main Content -->
+              <div class="row g-4">
+                <div class="col-lg-8">
+                  <div class="analytics-card h-100">
+                    <div class="analytics-card-body">
+                      <div class="d-flex align-items-center mb-4">
+                        <div class="analytics-icon bg-danger me-3">
+                          <i class="fas fa-flag-checkered"></i>
+                        </div>
+                        <div>
+                          <h4 class="mb-1">Enter Project End</h4>
+                          <p class="text-muted mb-0">
+                            Record project completion and finalize placement
+                            details
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="row g-4">
+                        <div class="col-md-6">
+                          <div class="info-card">
+                            <div class="info-card-header">
+                              <i class="fas fa-calendar-check text-danger"></i>
+                              <h6>End Date & Reason</h6>
+                            </div>
+                            <p class="text-muted small">
+                              Select completion date and specify reason for
+                              ending
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="info-card">
+                            <div class="info-card-header">
+                              <i class="fas fa-file-alt text-info"></i>
+                              <h6>Final Documentation</h6>
+                            </div>
+                            <p class="text-muted small">
+                              Complete project documentation and handover
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="analytics-card h-100">
+                    <div class="analytics-card-body">
+                      <h5 class="mb-3">Project Status</h5>
+                      <div class="status-transition">
+                        <div class="status-item current">
+                          <span class="badge bg-success">Active</span>
+                          <span class="text-muted">Current Status</span>
+                        </div>
+                        <div class="status-arrow">
+                          <i class="fas fa-arrow-down text-muted"></i>
+                        </div>
+                        <div class="status-item next">
+                          <span class="badge bg-danger">Completed</span>
+                          <span class="text-muted">After End</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Project Extensions Content -->
+            <div id="project-extensions-content" class="page-content">
+              <div class="page-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h1 class="page-title">Submit Project Extensions</h1>
+                    <p class="page-subtitle">
+                      Request and manage project timeline extensions
+                    </p>
+                  </div>
+                  <button class="btn btn-warning">
+                    <i class="fas fa-calendar-plus me-2"></i>Request Extension
+                  </button>
+                </div>
+              </div>
+
+              <!-- Main Content -->
+              <div class="row g-4">
+                <div class="col-lg-8">
+                  <div class="analytics-card h-100">
+                    <div class="analytics-card-body">
+                      <div class="d-flex align-items-center mb-4">
+                        <div class="analytics-icon bg-warning me-3">
+                          <i class="fas fa-calendar-plus"></i>
+                        </div>
+                        <div>
+                          <h4 class="mb-1">Submit Project Extensions</h4>
+                          <p class="text-muted mb-0">
+                            Request and manage project timeline extensions
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="row g-4">
+                        <div class="col-md-6">
+                          <div class="info-card">
+                            <div class="info-card-header">
+                              <i class="fas fa-clock text-warning"></i>
+                              <h6>Extension Duration</h6>
+                            </div>
+                            <p class="text-muted small">
+                              Specify the additional time needed for project
+                              completion
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="info-card">
+                            <div class="info-card-header">
+                              <i class="fas fa-comment-alt text-info"></i>
+                              <h6>Justification & Reason</h6>
+                            </div>
+                            <p class="text-muted small">
+                              Provide detailed explanation for the extension
+                              request
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="analytics-card h-100">
+                    <div class="analytics-card-body">
+                      <h5 class="mb-3">Extension History</h5>
+                      <div class="extension-item">
+                        <div
+                          class="d-flex justify-content-between align-items-center mb-2"
+                        >
+                          <span class="fw-medium">Previous Extension</span>
+                          <span class="badge bg-success">Approved</span>
+                        </div>
+                        <p class="text-muted small mb-3">
+                          +30 days extension granted
+                        </p>
+                      </div>
+                      <div class="extension-item">
+                        <div
+                          class="d-flex justify-content-between align-items-center mb-2"
+                        >
+                          <span class="fw-medium">Current Request</span>
+                          <span class="badge bg-warning">Pending</span>
+                        </div>
+                        <p class="text-muted small mb-0">
+                          +15 days under review
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Extension Guidelines -->
+              <div class="row g-4 mt-2">
+                <div class="col-12">
+                  <div class="analytics-card">
+                    <div class="analytics-card-body">
+                      <h5 class="mb-3">Extension Guidelines</h5>
+                      <div class="row g-3">
+                        <div class="col-md-4">
+                          <div class="text-center p-3">
+                            <i
+                              class="fas fa-calendar-day text-primary mb-2"
+                              style="font-size: 2rem"
+                            ></i>
+                            <h6>Maximum Duration</h6>
+                            <p class="text-muted small mb-0">
+                              Extensions up to 60 days per request
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="text-center p-3">
+                            <i
+                              class="fas fa-file-contract text-success mb-2"
+                              style="font-size: 2rem"
+                            ></i>
+                            <h6>Documentation Required</h6>
+                            <p class="text-muted small mb-0">
+                              Detailed justification and client approval
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="text-center p-3">
+                            <i
+                              class="fas fa-clock text-warning mb-2"
+                              style="font-size: 2rem"
+                            ></i>
+                            <h6>Processing Time</h6>
+                            <p class="text-muted small mb-0">
+                              2-3 business days for approval
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Financials Content -->
+            <div id="financials-content" class="page-content">
+              <div class="page-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h1 class="page-title">Financials</h1>
+                    <p class="page-subtitle">
+                      Manage financial details, billing, and earnings
+                    </p>
+                  </div>
+                  <button class="btn btn-success">
+                    <i class="fas fa-plus me-2"></i>Add Financial Details
+                  </button>
+                </div>
+              </div>
+
+              <!-- Financial Overview -->
+              <div class="row g-4 mb-4">
+                <div class="col-lg-4 col-md-6">
+                  <div class="analytics-card h-100">
+                    <div class="analytics-card-body">
+                      <div class="analytics-icon bg-success">
+                        <i class="fas fa-dollar-sign"></i>
+                      </div>
+                      <div class="analytics-content">
+                        <div class="analytics-number">$12,450</div>
+                        <div class="analytics-label">Total Earnings</div>
+                        <div class="analytics-description">This year</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="analytics-card h-100">
+                    <div class="analytics-card-body">
+                      <div class="analytics-icon bg-primary">
+                        <i class="fas fa-chart-line"></i>
+                      </div>
+                      <div class="analytics-content">
+                        <div class="analytics-number">$2,100</div>
+                        <div class="analytics-label">Monthly Average</div>
+                        <div class="analytics-description">Commission rate</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="analytics-card h-100">
+                    <div class="analytics-card-body">
+                      <div class="analytics-icon bg-warning">
+                        <i class="fas fa-clock"></i>
+                      </div>
+                      <div class="analytics-content">
+                        <div class="analytics-number">$850</div>
+                        <div class="analytics-label">Pending Payment</div>
+                        <div class="analytics-description">Current billing</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="analytics-card h-100">
+                    <div class="analytics-card-body">
+                      <div class="analytics-icon bg-info">
+                        <i class="fas fa-percentage"></i>
+                      </div>
+                      <div class="analytics-content">
+                        <div class="analytics-number">15%</div>
+                        <div class="analytics-label">Commission Rate</div>
+                        <div class="analytics-description">Current rate</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Financial Actions Grid -->
+              <div class="row g-4 mb-4">
+                <div class="col-lg-6">
+                  <div class="financial-card">
+                    <div class="financial-card-header">
+                      <div class="financial-icon bg-success">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                      </div>
+                      <div class="financial-card-title">
+                        <h5>Financial Details Entry</h5>
+                        <p>Available only after placement submission</p>
+                      </div>
+                    </div>
+                    <div class="financial-card-body">
+                      <div class="action-buttons">
+                        <button class="btn btn-outline-success btn-sm">
+                          <i class="fas fa-edit me-2"></i>Enter Details
+                        </button>
+                        <button class="btn btn-outline-primary btn-sm">
+                          <i class="fas fa-money-bill-wave me-2"></i>Rate
+                          Changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="financial-card">
+                    <div class="financial-card-header">
+                      <div class="financial-icon bg-info">
+                        <i class="fas fa-upload"></i>
+                      </div>
+                      <div class="financial-card-title">
+                        <h5>Supporting Documents</h5>
+                        <p>Upload required financial documentation</p>
+                      </div>
+                    </div>
+                    <div class="financial-card-body">
+                      <div class="document-grid">
+                        <div class="document-status">
+                          <i class="fas fa-file-alt"></i>
+                          <span>W9 Form</span>
+                          <div class="status-badge success">✓</div>
+                        </div>
+                        <div class="document-status">
+                          <i class="fas fa-university"></i>
+                          <span>Bank Details</span>
+                          <div class="status-badge pending">⚠</div>
+                        </div>
+                        <div class="document-status">
+                          <i class="fas fa-check"></i>
+                          <span>Cancelled Check</span>
+                          <div class="status-badge success">✓</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Earnings and Billing Section -->
+              <div class="row g-4">
+                <div class="col-lg-6">
+                  <div class="financial-card earnings-card">
+                    <div class="financial-card-header">
+                      <div class="financial-icon bg-primary">
+                        <i class="fas fa-chart-line"></i>
+                      </div>
+                      <div class="financial-card-title">
+                        <h5>Commission Run Rate</h5>
+                        <p>View earnings breakdown by period</p>
+                      </div>
+                    </div>
+                    <div class="financial-card-body">
+                      <div class="earnings-grid">
+                        <div class="earning-item">
+                          <div class="earning-period">Weekly</div>
+                          <div class="earning-amount text-success">$525</div>
+                        </div>
+                        <div class="earning-item">
+                          <div class="earning-period">Monthly</div>
+                          <div class="earning-amount text-primary">$2,100</div>
+                        </div>
+                        <div class="earning-item">
+                          <div class="earning-period">Yearly</div>
+                          <div class="earning-amount text-warning">$25,200</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="financial-card billing-card">
+                    <div class="financial-card-header">
+                      <div class="financial-icon bg-warning">
+                        <i class="fas fa-receipt"></i>
+                      </div>
+                      <div class="financial-card-title">
+                        <h5>Billing & Payments</h5>
+                        <p>Current billing and payment history</p>
+                      </div>
+                    </div>
+                    <div class="financial-card-body">
+                      <div class="current-billing">
+                        <div class="billing-header">
+                          <span class="billing-label">Current Billing</span>
+                          <span class="badge bg-warning">Pending</span>
+                        </div>
+                        <div class="billing-amount">$850.00</div>
+                        <div class="billing-due">Due in 5 days</div>
+                      </div>
+
+                      <div class="payment-history-section">
+                        <h6>Recent Payments</h6>
+                        <div class="payment-list">
+                          <div class="payment-row">
+                            <span>Dec 2024</span>
+                            <span>$2,100</span>
+                          </div>
+                          <div class="payment-row">
+                            <span>Nov 2024</span>
+                            <span>$1,950</span>
+                          </div>
+                          <div class="payment-row">
+                            <span>Oct 2024</span>
+                            <span>$2,250</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Create Job Modal -->
+    <div
+      class="modal fade"
+      id="createJobModal"
+      tabindex="-1"
+      aria-labelledby="createJobModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createJobModalLabel">
+              Create New Job Posting
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body modal-body-scroll">
+            <form id="createJobForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="jobTitle" class="form-label">Job Title *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="jobTitle"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="jobCategory" class="form-label">Category *</label>
+                  <select class="form-select" id="jobCategory" required>
+                    <option value="">Select Category</option>
+                    <option value="frontend">Frontend Development</option>
+                    <option value="backend">Backend Development</option>
+                    <option value="fullstack">Full Stack Development</option>
+                    <option value="design">UI/UX Design</option>
+                    <option value="mobile">Mobile Development</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="jobType" class="form-label">Job Type *</label>
+                  <select class="form-select" id="jobType" required>
+                    <option value="">Select Type</option>
+                    <option value="fulltime">Full Time</option>
+                    <option value="parttime">Part Time</option>
+                    <option value="contract">Contract</option>
+                    <option value="freelance">Freelance</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="jobLocation" class="form-label">Location *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="jobLocation"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="salaryMin" class="form-label"
+                    >Minimum Salary</label
+                  >
+                  <input type="number" class="form-control" id="salaryMin" />
+                </div>
+                <div class="col-md-6">
+                  <label for="salaryMax" class="form-label"
+                    >Maximum Salary</label
+                  >
+                  <input type="number" class="form-control" id="salaryMax" />
+                </div>
+                <div class="col-12">
+                  <label for="jobDescription" class="form-label"
+                    >Job Description *</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="jobDescription"
+                    rows="4"
+                    required
+                  ></textarea>
+                </div>
+                <div class="col-12">
+                  <label for="jobRequirements" class="form-label"
+                    >Requirements</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="jobRequirements"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div class="col-md-6">
+                  <label for="applicationDeadline" class="form-label"
+                    >Application Deadline</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="applicationDeadline"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="contactEmail" class="form-label"
+                    >Contact Email *</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="contactEmail"
+                    required
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="button" class="btn btn-primary" onclick="createJob()">
+              Create Job Posting
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Placement Modal -->
+    <div
+      class="modal fade"
+      id="createPlacementModal"
+      tabindex="-1"
+      aria-labelledby="createPlacementModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createPlacementModalLabel">
+              Add New Placement
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body modal-body-scroll">
+            <form id="createPlacementForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="candidateName" class="form-label"
+                    >Candidate Name *</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="candidateName"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="candidateEmail" class="form-label"
+                    >Candidate Email *</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="candidateEmail"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="candidatePhone" class="form-label"
+                    >Phone Number</label
+                  >
+                  <input type="tel" class="form-control" id="candidatePhone" />
+                </div>
+                <div class="col-md-6">
+                  <label for="placementPosition" class="form-label"
+                    >Position *</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="placementPosition"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="companyName" class="form-label"
+                    >Company Name *</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="companyName"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="placementType" class="form-label"
+                    >Placement Type *</label
+                  >
+                  <select class="form-select" id="placementType" required>
+                    <option value="">Select Type</option>
+                    <option value="permanent">Permanent</option>
+                    <option value="contract">Contract</option>
+                    <option value="temporary">Temporary</option>
+                    <option value="internship">Internship</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="startDate" class="form-label">Start Date *</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="startDate"
+                    required
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="endDate" class="form-label">End Date</label>
+                  <input type="date" class="form-control" id="endDate" />
+                </div>
+                <div class="col-md-6">
+                  <label for="salary" class="form-label">Salary/Rate</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="salary"
+                    placeholder="Enter amount"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="placementStatus" class="form-label"
+                    >Status *</label
+                  >
+                  <select class="form-select" id="placementStatus" required>
+                    <option value="">Select Status</option>
+                    <option value="active">Active</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                    <option value="cancelled">Cancelled</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="placementNotes" class="form-label"
+                    >Notes/Comments</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="placementNotes"
+                    rows="3"
+                    placeholder="Additional notes about the placement..."
+                  ></textarea>
+                </div>
+                <div class="col-md-6">
+                  <label for="recruiterName" class="form-label"
+                    >Recruiter Name</label
+                  >
+                  <input type="text" class="form-control" id="recruiterName" />
+                </div>
+                <div class="col-md-6">
+                  <label for="commissionRate" class="form-label"
+                    >Commission Rate (%)</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="commissionRate"
+                    min="0"
+                    max="100"
+                    step="0.1"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="createPlacement()"
+            >
+              Add Placement
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
