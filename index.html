@@ -22,8 +22,6 @@
           <img src="/images/logo.png" alt="Company Logo" class="logo" />
         </div>
         <div class="d-flex align-items-center gap-3">
-          <button class="btn btn-custom-green">Invite Staff</button>
-          <button class="btn btn-custom-green">Invite Engineer</button>
           <button class="btn btn-outline-custom">
             <i class="fas fa-sign-out-alt me-2"></i>
             Logout
@@ -52,7 +50,7 @@
                   </div>
                   <h2 class="profile-name">Alex Coal</h2>
                   <p class="profile-date">Member since Jan 2024</p>
-                  <button class="btn-edit-profile">
+                  <button class="btn-edit-profile" data-page="profile-settings">
                     <i class="fas fa-edit"></i> Profile
                   </button>
                 </div>
@@ -103,12 +101,6 @@
                     </div>
                   </div>
 
-                  <!-- Profile Management -->
-                  <a href="#" class="nav-item" data-page="profile-management">
-                    <i class="fas fa-user-cog nav-icon"></i>
-                    <span class="nav-text">Profile Management</span>
-                  </a>
-
                   <!-- Placement Dropdown -->
                   <div class="nav-dropdown">
                     <div
@@ -145,23 +137,105 @@
                     </div>
                   </div>
 
-                  <!-- Financials -->
-                  <a href="#" class="nav-item" data-page="financials">
-                    <i class="fas fa-wallet nav-icon"></i>
-                    <span class="nav-text">Financials</span>
-                  </a>
+                  <!-- Financials Dropdown -->
+                  <div class="nav-dropdown">
+                    <div
+                      class="nav-item dropdown-toggle"
+                      data-dropdown="financials"
+                    >
+                      <div class="d-flex align-items-center flex-grow-1">
+                        <i class="fas fa-wallet nav-icon"></i>
+                        <span class="nav-text">Financials</span>
+                      </div>
+                      <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </div>
+                    <div class="dropdown-content" id="financials-dropdown">
+                      <a href="#" class="dropdown-item" data-page="financials">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span>Financial Information</span>
+                      </a>
+                    </div>
+                  </div>
 
-                  <!-- Communication & Support -->
-                  <a href="#" class="nav-item" data-page="communication">
-                    <i class="fas fa-headset nav-icon"></i>
-                    <span class="nav-text">Communication & Support</span>
-                  </a>
+                  <!-- Communication & Support Dropdown -->
+                  <div class="nav-dropdown">
+                    <div
+                      class="nav-item dropdown-toggle"
+                      data-dropdown="communication"
+                    >
+                      <div class="d-flex align-items-center flex-grow-1">
+                        <i class="fas fa-headset nav-icon"></i>
+                        <span class="nav-text">Communication & Support</span>
+                      </div>
+                      <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </div>
+                    <div class="dropdown-content" id="communication-dropdown">
+                      <a
+                        href="#"
+                        class="dropdown-item"
+                        data-page="internal-messaging"
+                      >
+                        <i class="fas fa-envelope"></i>
+                        <span>Internal Messaging</span>
+                      </a>
+                      <a href="#" class="dropdown-item" data-page="help-desk">
+                        <i class="fas fa-life-ring"></i>
+                        <span>Help Desk Access</span>
+                      </a>
+                      <a
+                        href="#"
+                        class="dropdown-item"
+                        data-page="learning-faq"
+                      >
+                        <i class="fas fa-question-circle"></i>
+                        <span>Learning & FAQ Access</span>
+                      </a>
+                      <a href="#" class="dropdown-item" data-page="assistance">
+                        <i class="fas fa-hands-helping"></i>
+                        <span>Reach Out for Assistance</span>
+                      </a>
+                    </div>
+                  </div>
 
-                  <!-- Change Request -->
-                  <a href="#" class="nav-item" data-page="change-request">
-                    <i class="fas fa-exchange-alt nav-icon"></i>
-                    <span class="nav-text">Change Request</span>
-                  </a>
+                  <!-- Change Request Dropdown -->
+                  <div class="nav-dropdown">
+                    <div
+                      class="nav-item dropdown-toggle"
+                      data-dropdown="change-request"
+                    >
+                      <div class="d-flex align-items-center flex-grow-1">
+                        <i class="fas fa-exchange-alt nav-icon"></i>
+                        <span class="nav-text">Change Request</span>
+                      </div>
+                      <i class="fas fa-chevron-down dropdown-arrow"></i>
+                    </div>
+                    <div class="dropdown-content" id="change-request-dropdown">
+                      <a
+                        href="#"
+                        class="dropdown-item"
+                        data-page="request-submission"
+                      >
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Change Request Submission</span>
+                      </a>
+                      <a
+                        href="#"
+                        class="dropdown-item"
+                        data-page="approval-process"
+                      >
+                        <i class="fas fa-check-circle"></i>
+                        <span>Approval Process</span>
+                      </a>
+                      <a
+                        href="#"
+                        class="dropdown-item"
+                        data-page="post-approval-lock"
+                      >
+                        <i class="fas fa-lock"></i>
+                        <span>Post-Approval Lock</span>
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -186,7 +260,7 @@
                     data-bs-toggle="modal"
                     data-bs-target="#createJobModal"
                   >
-                    <i class="fas fa-plus me-2"></i>Create Job Posting
+                    <i class="fas fa-plus me-2"></i>Announce new jobs
                   </button>
                 </div>
               </div>
@@ -195,6 +269,13 @@
               <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                   <div class="job-card">
+                    <div class="job-card-image">
+                      <img
+                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=200&fit=crop&crop=center"
+                        alt="Frontend Development"
+                        class="card-img"
+                      />
+                    </div>
                     <div class="job-card-header">
                       <h5 class="job-title">Senior Frontend Developer</h5>
                       <span class="job-status status-active">Active</span>
@@ -229,6 +310,13 @@
 
                 <div class="col-lg-4 col-md-6">
                   <div class="job-card">
+                    <div class="job-card-image">
+                      <img
+                        src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=200&fit=crop&crop=center"
+                        alt="Backend Development"
+                        class="card-img"
+                      />
+                    </div>
                     <div class="job-card-header">
                       <h5 class="job-title">Backend Developer</h5>
                       <span class="job-status status-pending">Pending</span>
@@ -263,6 +351,13 @@
 
                 <div class="col-lg-4 col-md-6">
                   <div class="job-card">
+                    <div class="job-card-image">
+                      <img
+                        src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=200&fit=crop&crop=center"
+                        alt="UI/UX Design"
+                        class="card-img"
+                      />
+                    </div>
                     <div class="job-card-header">
                       <h5 class="job-title">UI/UX Designer</h5>
                       <span class="job-status status-closed">Closed</span>
@@ -1022,6 +1117,1727 @@
                 </div>
               </div>
             </div>
+
+            <!-- Profile Management Content -->
+            <div id="profile-settings-content" class="page-content">
+              <div class="page-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h1 class="page-title">Profile Management</h1>
+                    <p class="page-subtitle">
+                      View and update your personal information and preferences
+                    </p>
+                  </div>
+                  <button class="btn btn-primary">
+                    <i class="fas fa-save me-2"></i>Save Changes
+                  </button>
+                </div>
+              </div>
+
+              <!-- Profile Overview Cards -->
+              <div class="row g-4 mb-4">
+                <div class="col-lg-4 col-md-6">
+                  <div class="profile-stat-card">
+                    <div class="profile-stat-icon bg-primary">
+                      <i class="fas fa-user"></i>
+                    </div>
+                    <div class="profile-stat-content">
+                      <div class="profile-stat-number">Complete</div>
+                      <div class="profile-stat-label">Profile Status</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="profile-stat-card">
+                    <div class="profile-stat-icon bg-success">
+                      <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="profile-stat-content">
+                      <div class="profile-stat-number">3</div>
+                      <div class="profile-stat-label">Documents Uploaded</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="profile-stat-card">
+                    <div class="profile-stat-icon bg-info">
+                      <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="profile-stat-content">
+                      <div class="profile-stat-number">Active</div>
+                      <div class="profile-stat-label">Consent Status</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Profile Sections -->
+              <div class="row g-4">
+                <!-- Personal Information -->
+                <div class="col-lg-6">
+                  <div class="profile-section-card">
+                    <div class="profile-section-header">
+                      <div class="profile-section-icon bg-primary">
+                        <i class="fas fa-user-edit"></i>
+                      </div>
+                      <div class="profile-section-title">
+                        <h5>Personal Information</h5>
+                        <p>View and update your personal details</p>
+                      </div>
+                    </div>
+                    <div class="profile-section-body">
+                      <div class="profile-info-grid">
+                        <div class="profile-info-item">
+                          <label>Full Name</label>
+                          <div class="profile-info-value">Alex Coal</div>
+                        </div>
+                        <div class="profile-info-item">
+                          <label>Email Address</label>
+                          <div class="profile-info-value">
+                            alex.coal@example.com
+                          </div>
+                        </div>
+                        <div class="profile-info-item">
+                          <label>Phone Number</label>
+                          <div class="profile-info-value">
+                            +1 (555) 123-4567
+                          </div>
+                        </div>
+                        <div class="profile-info-item">
+                          <label>Location</label>
+                          <div class="profile-info-value">New York, NY</div>
+                        </div>
+                      </div>
+                      <button class="btn btn-outline-primary btn-sm mt-3">
+                        <i class="fas fa-edit me-2"></i>Edit Information
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Documents & Resume -->
+                <div class="col-lg-6">
+                  <div class="profile-section-card">
+                    <div class="profile-section-header">
+                      <div class="profile-section-icon bg-success">
+                        <i class="fas fa-file-upload"></i>
+                      </div>
+                      <div class="profile-section-title">
+                        <h5>Documents & Resume</h5>
+                        <p>Upload and manage your documents</p>
+                      </div>
+                    </div>
+                    <div class="profile-section-body">
+                      <div class="document-upload-grid">
+                        <div class="upload-item">
+                          <i class="fas fa-file-pdf text-danger"></i>
+                          <span>Resume.pdf</span>
+                          <div class="upload-status success">✓</div>
+                        </div>
+                        <div class="upload-item">
+                          <i class="fas fa-file-alt text-primary"></i>
+                          <span>Cover Letter.docx</span>
+                          <div class="upload-status success">✓</div>
+                        </div>
+                        <div class="upload-item">
+                          <i class="fas fa-certificate text-warning"></i>
+                          <span>Certifications.pdf</span>
+                          <div class="upload-status pending">⚠</div>
+                        </div>
+                      </div>
+                      <button class="btn btn-outline-success btn-sm mt-3">
+                        <i class="fas fa-plus me-2"></i>Upload Document
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Financial Details & Preferences Row -->
+              <div class="row g-4 mt-2">
+                <!-- Financial Details -->
+                <div class="col-lg-6">
+                  <div class="profile-section-card">
+                    <div class="profile-section-header">
+                      <div class="profile-section-icon bg-warning">
+                        <i class="fas fa-dollar-sign"></i>
+                      </div>
+                      <div class="profile-section-title">
+                        <h5>Financial Details</h5>
+                        <p>Available only after placement submission</p>
+                      </div>
+                    </div>
+                    <div class="profile-section-body">
+                      <div class="financial-status-card">
+                        <div class="financial-status-icon">
+                          <i class="fas fa-lock text-muted"></i>
+                        </div>
+                        <div class="financial-status-content">
+                          <h6>Access Restricted</h6>
+                          <p class="text-muted mb-0">
+                            Financial details will be available after your first
+                            placement is submitted and approved.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Preferences -->
+                <div class="col-lg-6">
+                  <div class="profile-section-card">
+                    <div class="profile-section-header">
+                      <div class="profile-section-icon bg-info">
+                        <i class="fas fa-cog"></i>
+                      </div>
+                      <div class="profile-section-title">
+                        <h5>Preferences</h5>
+                        <p>Manage via Change Request section</p>
+                      </div>
+                    </div>
+                    <div class="profile-section-body">
+                      <div class="preferences-info">
+                        <div class="preference-item">
+                          <i class="fas fa-bell text-primary"></i>
+                          <span>Notification Settings</span>
+                        </div>
+                        <div class="preference-item">
+                          <i class="fas fa-globe text-success"></i>
+                          <span>Language & Region</span>
+                        </div>
+                        <div class="preference-item">
+                          <i class="fas fa-shield-alt text-info"></i>
+                          <span>Privacy Settings</span>
+                        </div>
+                      </div>
+                      <button class="btn btn-outline-info btn-sm mt-3">
+                        <i class="fas fa-external-link-alt me-2"></i>Change
+                        Request
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Consent Management -->
+              <div class="row g-4 mt-2">
+                <div class="col-12">
+                  <div class="profile-section-card">
+                    <div class="profile-section-header">
+                      <div class="profile-section-icon bg-purple">
+                        <i class="fas fa-shield-check"></i>
+                      </div>
+                      <div class="profile-section-title">
+                        <h5>Consent Management</h5>
+                        <p>Manage your data privacy and consent preferences</p>
+                      </div>
+                    </div>
+                    <div class="profile-section-body">
+                      <div class="consent-grid">
+                        <div class="consent-item">
+                          <div class="consent-header">
+                            <h6>Data Processing Consent</h6>
+                            <div class="consent-toggle active">
+                              <span class="toggle-status">Active</span>
+                            </div>
+                          </div>
+                          <p class="consent-description">
+                            Allow processing of personal data for recruitment
+                            purposes
+                          </p>
+                        </div>
+                        <div class="consent-item">
+                          <div class="consent-header">
+                            <h6>Marketing Communications</h6>
+                            <div class="consent-toggle active">
+                              <span class="toggle-status">Active</span>
+                            </div>
+                          </div>
+                          <p class="consent-description">
+                            Receive updates about new opportunities and company
+                            news
+                          </p>
+                        </div>
+                        <div class="consent-item">
+                          <div class="consent-header">
+                            <h6>Third-Party Sharing</h6>
+                            <div class="consent-toggle inactive">
+                              <span class="toggle-status">Inactive</span>
+                            </div>
+                          </div>
+                          <p class="consent-description">
+                            Allow sharing of profile with partner organizations
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Internal Messaging Content -->
+            <div id="internal-messaging-content" class="page-content">
+              <div class="page-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h1 class="page-title">Internal Messaging</h1>
+                    <p class="page-subtitle">
+                      Contact Admin or Team 99 directly via platform
+                    </p>
+                  </div>
+                  <button class="btn btn-primary">
+                    <i class="fas fa-plus me-2"></i>New Message
+                  </button>
+                </div>
+              </div>
+
+              <!-- Messaging Overview -->
+              <div class="row g-4 mb-4">
+                <div class="col-lg-4 col-md-6">
+                  <div class="messaging-stat-card">
+                    <div class="messaging-stat-icon bg-primary">
+                      <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="messaging-stat-content">
+                      <div class="messaging-stat-number">12</div>
+                      <div class="messaging-stat-label">Total Messages</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="messaging-stat-card">
+                    <div class="messaging-stat-icon bg-success">
+                      <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="messaging-stat-content">
+                      <div class="messaging-stat-number">8</div>
+                      <div class="messaging-stat-label">Resolved</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                  <div class="messaging-stat-card">
+                    <div class="messaging-stat-icon bg-warning">
+                      <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="messaging-stat-content">
+                      <div class="messaging-stat-number">3</div>
+                      <div class="messaging-stat-label">Pending Response</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Messaging Interface -->
+              <div class="row g-4">
+                <!-- Message List -->
+                <div class="col-lg-4">
+                  <div class="messaging-sidebar">
+                    <div class="messaging-sidebar-header">
+                      <h5>Conversations</h5>
+                      <button class="btn btn-sm btn-outline-primary">
+                        <i class="fas fa-filter"></i>
+                      </button>
+                    </div>
+                    <div class="messaging-sidebar-body">
+                      <!-- Admin Conversation -->
+                      <div
+                        class="conversation-item active"
+                        data-conversation="admin"
+                      >
+                        <div class="conversation-avatar">
+                          <img
+                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=face"
+                            alt="Admin"
+                            class="avatar-img"
+                          />
+                          <div class="status-indicator online"></div>
+                        </div>
+                        <div class="conversation-content">
+                          <div class="conversation-header">
+                            <h6>Platform Admin</h6>
+                            <span class="conversation-time">2m ago</span>
+                          </div>
+                          <p class="conversation-preview">
+                            Thanks for reaching out. We'll review your
+                            request...
+                          </p>
+                          <div class="conversation-meta">
+                            <span class="badge bg-primary">Admin</span>
+                            <span class="unread-count">2</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Team 99 Conversation -->
+                      <div class="conversation-item" data-conversation="team99">
+                        <div class="conversation-avatar">
+                          <img
+                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=50&h=50&fit=crop&crop=face"
+                            alt="Team 99"
+                            class="avatar-img"
+                          />
+                          <div class="status-indicator away"></div>
+                        </div>
+                        <div class="conversation-content">
+                          <div class="conversation-header">
+                            <h6>Team 99 Support</h6>
+                            <span class="conversation-time">1h ago</span>
+                          </div>
+                          <p class="conversation-preview">
+                            Your placement documentation has been processed...
+                          </p>
+                          <div class="conversation-meta">
+                            <span class="badge bg-success">Team 99</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- HR Department -->
+                      <div class="conversation-item" data-conversation="hr">
+                        <div class="conversation-avatar">
+                          <img
+                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=50&h=50&fit=crop&crop=face"
+                            alt="HR"
+                            class="avatar-img"
+                          />
+                          <div class="status-indicator offline"></div>
+                        </div>
+                        <div class="conversation-content">
+                          <div class="conversation-header">
+                            <h6>HR Department</h6>
+                            <span class="conversation-time">3d ago</span>
+                          </div>
+                          <p class="conversation-preview">
+                            Welcome to the platform! Here's your onboarding
+                            guide...
+                          </p>
+                          <div class="conversation-meta">
+                            <span class="badge bg-info">HR</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Message Thread -->
+                <div class="col-lg-8">
+                  <div class="messaging-main">
+                    <div class="messaging-main-header">
+                      <div class="conversation-info">
+                        <img
+                          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face"
+                          alt="Admin"
+                          class="avatar-img"
+                        />
+                        <div>
+                          <h6>Platform Admin</h6>
+                          <span class="status-text">
+                            <div class="status-indicator online"></div>
+                            Online
+                          </span>
+                        </div>
+                      </div>
+                      <div class="conversation-actions">
+                        <button class="btn btn-sm btn-outline-secondary">
+                          <i class="fas fa-archive"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary">
+                          <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="messaging-main-body">
+                      <!-- Message Thread -->
+                      <div class="message-thread">
+                        <!-- Received Message -->
+                        <div class="message-item received">
+                          <div class="message-avatar">
+                            <img
+                              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+                              alt="Admin"
+                            />
+                          </div>
+                          <div class="message-content">
+                            <div class="message-bubble">
+                              <p>
+                                Hello Alex! Welcome to the platform. How can I
+                                assist you today?
+                              </p>
+                            </div>
+                            <div class="message-time">Today, 2:30 PM</div>
+                          </div>
+                        </div>
+
+                        <!-- Sent Message -->
+                        <div class="message-item sent">
+                          <div class="message-content">
+                            <div class="message-bubble">
+                              <p>
+                                Hi! I have a question about my placement status.
+                                Could you help me understand the next steps?
+                              </p>
+                            </div>
+                            <div class="message-time">Today, 2:32 PM</div>
+                          </div>
+                        </div>
+
+                        <!-- Received Message -->
+                        <div class="message-item received">
+                          <div class="message-avatar">
+                            <img
+                              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+                              alt="Admin"
+                            />
+                          </div>
+                          <div class="message-content">
+                            <div class="message-bubble">
+                              <p>
+                                Of course! I'd be happy to help. Let me check
+                                your current placement status and get back to
+                                you with detailed information.
+                              </p>
+                            </div>
+                            <div class="message-time">Today, 2:35 PM</div>
+                          </div>
+                        </div>
+
+                        <!-- Typing Indicator (Hidden by default) -->
+                        <div
+                          class="message-item received typing"
+                          id="typing-indicator"
+                          style="display: none"
+                        >
+                          <div class="message-avatar">
+                            <img
+                              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+                              alt="Admin"
+                            />
+                          </div>
+                          <div class="message-content">
+                            <div class="typing-indicator">
+                              <span></span>
+                              <span></span>
+                              <span></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="messaging-main-footer">
+                      <div class="message-input-container">
+                        <button class="btn btn-sm btn-outline-secondary">
+                          <i class="fas fa-paperclip"></i>
+                        </button>
+                        <input
+                          type="text"
+                          class="form-control message-input"
+                          placeholder="Type your message..."
+                        />
+                        <button class="btn btn-primary">
+                          <i class="fas fa-paper-plane"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Help Desk Access Content -->
+            <div id="help-desk-content" class="page-content">
+              <div class="page-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h1 class="page-title">Help Desk Access</h1>
+                    <p class="page-subtitle">
+                      Submit issue reports via "Report an Issue" form
+                    </p>
+                  </div>
+                  <button
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#reportIssueModal"
+                  >
+                    <i class="fas fa-plus me-2"></i>Report an Issue
+                  </button>
+                </div>
+              </div>
+
+              <!-- Help Desk Overview -->
+              <div class="row g-4 mb-4">
+                <div class="col-lg-3 col-md-6">
+                  <div class="helpdesk-stat-card">
+                    <div class="helpdesk-stat-icon bg-primary">
+                      <i class="fas fa-ticket-alt"></i>
+                    </div>
+                    <div class="helpdesk-stat-content">
+                      <div class="helpdesk-stat-number">7</div>
+                      <div class="helpdesk-stat-label">Open Tickets</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                  <div class="helpdesk-stat-card">
+                    <div class="helpdesk-stat-icon bg-success">
+                      <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="helpdesk-stat-content">
+                      <div class="helpdesk-stat-number">23</div>
+                      <div class="helpdesk-stat-label">Resolved</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                  <div class="helpdesk-stat-card">
+                    <div class="helpdesk-stat-icon bg-warning">
+                      <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="helpdesk-stat-content">
+                      <div class="helpdesk-stat-number">2h</div>
+                      <div class="helpdesk-stat-label">Avg Response</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                  <div class="helpdesk-stat-card">
+                    <div class="helpdesk-stat-icon bg-info">
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div class="helpdesk-stat-content">
+                      <div class="helpdesk-stat-number">4.8</div>
+                      <div class="helpdesk-stat-label">Satisfaction</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Actions -->
+              <div class="row g-4 mb-4">
+                <div class="col-lg-4">
+                  <div
+                    class="quick-action-card"
+                    data-bs-toggle="modal"
+                    data-bs-target="#reportIssueModal"
+                  >
+                    <div class="quick-action-icon bg-danger">
+                      <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="quick-action-content">
+                      <h5>Report Technical Issue</h5>
+                      <p>
+                        System bugs, login problems, or technical difficulties
+                      </p>
+                    </div>
+                    <div class="quick-action-arrow">
+                      <i class="fas fa-arrow-right"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div
+                    class="quick-action-card"
+                    data-bs-toggle="modal"
+                    data-bs-target="#reportIssueModal"
+                  >
+                    <div class="quick-action-icon bg-warning">
+                      <i class="fas fa-question-circle"></i>
+                    </div>
+                    <div class="quick-action-content">
+                      <h5>General Inquiry</h5>
+                      <p>Questions about processes, policies, or procedures</p>
+                    </div>
+                    <div class="quick-action-arrow">
+                      <i class="fas fa-arrow-right"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div
+                    class="quick-action-card"
+                    data-bs-toggle="modal"
+                    data-bs-target="#reportIssueModal"
+                  >
+                    <div class="quick-action-icon bg-info">
+                      <i class="fas fa-user-cog"></i>
+                    </div>
+                    <div class="quick-action-content">
+                      <h5>Account Support</h5>
+                      <p>Profile issues, access problems, or account changes</p>
+                    </div>
+                    <div class="quick-action-arrow">
+                      <i class="fas fa-arrow-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recent Tickets -->
+              <div class="row g-4">
+                <div class="col-12">
+                  <div class="helpdesk-section-card">
+                    <div class="helpdesk-section-header">
+                      <h5>Your Recent Tickets</h5>
+                      <button class="btn btn-sm btn-outline-primary">
+                        <i class="fas fa-history me-2"></i>View All
+                      </button>
+                    </div>
+                    <div class="helpdesk-section-body">
+                      <div class="ticket-list">
+                        <!-- Ticket Item 1 -->
+                        <div class="ticket-item">
+                          <div class="ticket-priority high">
+                            <i class="fas fa-circle"></i>
+                          </div>
+                          <div class="ticket-content">
+                            <div class="ticket-header">
+                              <h6>
+                                Login Issues with Two-Factor Authentication
+                              </h6>
+                              <span class="ticket-id">#HD-2024-001</span>
+                            </div>
+                            <p class="ticket-description">
+                              Unable to receive SMS codes for 2FA verification
+                            </p>
+                            <div class="ticket-meta">
+                              <span class="ticket-date">
+                                <i class="fas fa-calendar"></i>
+                                Created: Jan 15, 2024
+                              </span>
+                              <span class="ticket-agent">
+                                <i class="fas fa-user"></i>
+                                Assigned to: Sarah Johnson
+                              </span>
+                            </div>
+                          </div>
+                          <div class="ticket-status">
+                            <span class="status-badge in-progress"
+                              >In Progress</span
+                            >
+                            <div class="ticket-actions">
+                              <button class="btn btn-sm btn-outline-primary">
+                                View
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Ticket Item 2 -->
+                        <div class="ticket-item">
+                          <div class="ticket-priority medium">
+                            <i class="fas fa-circle"></i>
+                          </div>
+                          <div class="ticket-content">
+                            <div class="ticket-header">
+                              <h6>Question about Placement Documentation</h6>
+                              <span class="ticket-id">#HD-2024-002</span>
+                            </div>
+                            <p class="ticket-description">
+                              Need clarification on required documents for
+                              placement submission
+                            </p>
+                            <div class="ticket-meta">
+                              <span class="ticket-date">
+                                <i class="fas fa-calendar"></i>
+                                Created: Jan 12, 2024
+                              </span>
+                              <span class="ticket-agent">
+                                <i class="fas fa-user"></i>
+                                Assigned to: Mike Chen
+                              </span>
+                            </div>
+                          </div>
+                          <div class="ticket-status">
+                            <span class="status-badge resolved">Resolved</span>
+                            <div class="ticket-actions">
+                              <button class="btn btn-sm btn-outline-success">
+                                <i class="fas fa-star"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Ticket Item 3 -->
+                        <div class="ticket-item">
+                          <div class="ticket-priority low">
+                            <i class="fas fa-circle"></i>
+                          </div>
+                          <div class="ticket-content">
+                            <div class="ticket-header">
+                              <h6>Feature Request: Dark Mode</h6>
+                              <span class="ticket-id">#HD-2024-003</span>
+                            </div>
+                            <p class="ticket-description">
+                              Request for dark mode theme option in the platform
+                            </p>
+                            <div class="ticket-meta">
+                              <span class="ticket-date">
+                                <i class="fas fa-calendar"></i>
+                                Created: Jan 10, 2024
+                              </span>
+                              <span class="ticket-agent">
+                                <i class="fas fa-user"></i>
+                                Assigned to: Development Team
+                              </span>
+                            </div>
+                          </div>
+                          <div class="ticket-status">
+                            <span class="status-badge pending">Pending</span>
+                            <div class="ticket-actions">
+                              <button class="btn btn-sm btn-outline-primary">
+                                View
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Learning & FAQ Access Content -->
+            <div id="learning-faq-content" class="page-content">
+              <div class="page-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h1 class="page-title">Learning & FAQ Access</h1>
+                    <p class="page-subtitle">
+                      View voice, video, and text-based FAQs • Submit E-learning
+                      inquiries
+                    </p>
+                  </div>
+                  <button
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#elearningInquiryModal"
+                  >
+                    <i class="fas fa-question-circle me-2"></i>Submit E-learning
+                    Inquiry
+                  </button>
+                </div>
+              </div>
+
+              <!-- Learning Overview -->
+              <div class="row g-4 mb-4">
+                <div class="col-lg-3 col-md-6">
+                  <div class="learning-stat-card">
+                    <div class="learning-stat-icon bg-primary">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="learning-stat-content">
+                      <div class="learning-stat-number">45</div>
+                      <div class="learning-stat-label">Video FAQs</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                  <div class="learning-stat-card">
+                    <div class="learning-stat-icon bg-success">
+                      <i class="fas fa-microphone"></i>
+                    </div>
+                    <div class="learning-stat-content">
+                      <div class="learning-stat-number">28</div>
+                      <div class="learning-stat-label">Voice FAQs</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                  <div class="learning-stat-card">
+                    <div class="learning-stat-icon bg-info">
+                      <i class="fas fa-file-text"></i>
+                    </div>
+                    <div class="learning-stat-content">
+                      <div class="learning-stat-number">156</div>
+                      <div class="learning-stat-label">Text FAQs</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                  <div class="learning-stat-card">
+                    <div class="learning-stat-icon bg-warning">
+                      <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="learning-stat-content">
+                      <div class="learning-stat-number">12</div>
+                      <div class="learning-stat-label">Learning Modules</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Categories -->
+              <div class="row g-4 mb-4">
+                <div class="col-lg-4">
+                  <div class="faq-category-card" data-category="video">
+                    <div class="faq-category-header">
+                      <div class="faq-category-icon bg-primary">
+                        <i class="fas fa-video"></i>
+                      </div>
+                      <div class="faq-category-content">
+                        <h5>Video FAQs</h5>
+                        <p>Visual step-by-step guides and tutorials</p>
+                      </div>
+                    </div>
+                    <div class="faq-category-stats">
+                      <span class="faq-count">45 Videos</span>
+                      <span class="faq-duration">~2.5 hrs total</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="faq-category-card" data-category="voice">
+                    <div class="faq-category-header">
+                      <div class="faq-category-icon bg-success">
+                        <i class="fas fa-volume-up"></i>
+                      </div>
+                      <div class="faq-category-content">
+                        <h5>Voice FAQs</h5>
+                        <p>Audio explanations and spoken guidance</p>
+                      </div>
+                    </div>
+                    <div class="faq-category-stats">
+                      <span class="faq-count">28 Audio Files</span>
+                      <span class="faq-duration">~1.8 hrs total</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="faq-category-card" data-category="text">
+                    <div class="faq-category-header">
+                      <div class="faq-category-icon bg-info">
+                        <i class="fas fa-book-open"></i>
+                      </div>
+                      <div class="faq-category-content">
+                        <h5>Text FAQs</h5>
+                        <p>Written guides and detailed documentation</p>
+                      </div>
+                    </div>
+                    <div class="faq-category-stats">
+                      <span class="faq-count">156 Articles</span>
+                      <span class="faq-duration">Quick reference</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Popular FAQs Section -->
+              <div class="row g-4 mb-4">
+                <div class="col-12">
+                  <div class="learning-section-card">
+                    <div class="learning-section-header">
+                      <h5>Popular FAQs</h5>
+                      <div class="faq-filter-tabs">
+                        <button class="faq-tab active" data-filter="all">
+                          All
+                        </button>
+                        <button class="faq-tab" data-filter="video">
+                          Video
+                        </button>
+                        <button class="faq-tab" data-filter="voice">
+                          Voice
+                        </button>
+                        <button class="faq-tab" data-filter="text">Text</button>
+                      </div>
+                    </div>
+                    <div class="faq-search-container">
+                      <i class="fas fa-search faq-search-icon"></i>
+                      <input
+                        type="text"
+                        class="faq-search-input"
+                        placeholder="Search FAQs..."
+                        id="faqSearchInput"
+                      />
+                    </div>
+                    <div class="learning-section-body">
+                      <div class="faq-grid">
+                        <!-- Video FAQ Item -->
+                        <div class="faq-item" data-type="video">
+                          <div class="faq-media">
+                            <div class="faq-thumbnail">
+                              <img
+                                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=300&h=200&fit=crop"
+                                alt="Video Tutorial"
+                              />
+                              <div class="faq-play-button">
+                                <i class="fas fa-play"></i>
+                              </div>
+                              <div class="faq-duration">3:45</div>
+                            </div>
+                          </div>
+                          <div class="faq-content">
+                            <div class="faq-type-badge video">
+                              <i class="fas fa-video"></i>
+                              Video
+                            </div>
+                            <h6>How to Submit Your First Placement</h6>
+                            <p>
+                              Step-by-step video guide for submitting placement
+                              information
+                            </p>
+                            <div class="faq-meta">
+                              <span class="faq-views">
+                                <i class="fas fa-eye"></i>
+                                1,234 views
+                              </span>
+                              <span class="faq-rating">
+                                <i class="fas fa-star"></i>
+                                4.8
+                              </span>
+                            </div>
+                          </div>
+                          <div class="faq-expanded-content">
+                            <p>
+                              <strong>Full Description:</strong> This
+                              comprehensive video tutorial walks you through the
+                              complete placement submission process, from
+                              initial setup to final confirmation. You'll learn
+                              about required documentation, validation steps,
+                              and common troubleshooting tips.
+                            </p>
+                            <p><strong>Topics Covered:</strong></p>
+                            <ul>
+                              <li>Setting up placement information</li>
+                              <li>Document upload requirements</li>
+                              <li>Validation and review process</li>
+                              <li>Common errors and solutions</li>
+                            </ul>
+                            <div class="faq-actions">
+                              <button
+                                class="faq-action-btn"
+                                onclick="playVideo(this)"
+                              >
+                                <i class="fas fa-play"></i> Play Video
+                              </button>
+                              <button
+                                class="faq-action-btn"
+                                onclick="bookmarkFAQ(this)"
+                              >
+                                <i class="fas fa-bookmark"></i> Bookmark
+                              </button>
+                              <button
+                                class="faq-action-btn"
+                                onclick="shareFAQ(this)"
+                              >
+                                <i class="fas fa-share"></i> Share
+                              </button>
+                              <button
+                                class="faq-action-btn"
+                                onclick="downloadTranscript(this)"
+                              >
+                                <i class="fas fa-download"></i> Transcript
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Voice FAQ Item -->
+                        <div class="faq-item" data-type="voice">
+                          <div class="faq-media">
+                            <div class="faq-audio-player">
+                              <div class="audio-controls">
+                                <button class="audio-play-btn">
+                                  <i class="fas fa-play"></i>
+                                </button>
+                                <div class="audio-progress">
+                                  <div class="audio-progress-bar"></div>
+                                </div>
+                                <span class="audio-duration">2:15</span>
+                              </div>
+                              <div class="audio-waveform">
+                                <div class="waveform-bars">
+                                  <span></span><span></span><span></span
+                                  ><span></span><span></span> <span></span
+                                  ><span></span><span></span><span></span
+                                  ><span></span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="faq-content">
+                            <div class="faq-type-badge voice">
+                              <i class="fas fa-microphone"></i>
+                              Voice
+                            </div>
+                            <h6>Understanding Financial Documentation</h6>
+                            <p>
+                              Audio explanation of required financial documents
+                              and processes
+                            </p>
+                            <div class="faq-meta">
+                              <span class="faq-views">
+                                <i class="fas fa-headphones"></i>
+                                856 listens
+                              </span>
+                              <span class="faq-rating">
+                                <i class="fas fa-star"></i>
+                                4.6
+                              </span>
+                            </div>
+                          </div>
+                          <div class="faq-expanded-content">
+                            <p>
+                              <strong>Audio Summary:</strong> This audio guide
+                              provides a clear explanation of all financial
+                              documentation requirements, including W9 forms,
+                              bank details, and billing procedures. Perfect for
+                              listening while multitasking.
+                            </p>
+                            <p><strong>Key Points:</strong></p>
+                            <ul>
+                              <li>Required financial documents overview</li>
+                              <li>W9 form completion guidelines</li>
+                              <li>Bank account setup procedures</li>
+                              <li>Billing rate configuration</li>
+                              <li>Payment processing timelines</li>
+                            </ul>
+                            <div class="faq-actions">
+                              <button
+                                class="faq-action-btn"
+                                onclick="playAudio(this)"
+                              >
+                                <i class="fas fa-play"></i> Play Audio
+                              </button>
+                              <button
+                                class="faq-action-btn"
+                                onclick="downloadAudio(this)"
+                              >
+                                <i class="fas fa-download"></i> Download
+                              </button>
+                              <button
+                                class="faq-action-btn"
+                                onclick="bookmarkFAQ(this)"
+                              >
+                                <i class="fas fa-bookmark"></i> Bookmark
+                              </button>
+                              <button
+                                class="faq-action-btn"
+                                onclick="getTranscript(this)"
+                              >
+                                <i class="fas fa-file-text"></i> Transcript
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Text FAQ Item -->
+                        <div class="faq-item" data-type="text">
+                          <div class="faq-media">
+                            <div class="faq-text-preview">
+                              <div class="text-preview-content">
+                                <h6>Quick Start Guide</h6>
+                                <p>
+                                  Welcome to the platform! This comprehensive
+                                  guide will help you navigate through all the
+                                  essential features...
+                                </p>
+                                <div class="text-preview-fade"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="faq-content">
+                            <div class="faq-type-badge text">
+                              <i class="fas fa-file-text"></i>
+                              Text
+                            </div>
+                            <h6>Platform Navigation Guide</h6>
+                            <p>
+                              Complete written guide for navigating the platform
+                              interface
+                            </p>
+                            <div class="faq-meta">
+                              <span class="faq-views">
+                                <i class="fas fa-book-reader"></i>
+                                2,145 reads
+                              </span>
+                              <span class="faq-rating">
+                                <i class="fas fa-star"></i>
+                                4.9
+                              </span>
+                            </div>
+                          </div>
+                          <div class="faq-expanded-content">
+                            <p>
+                              <strong>Complete Guide:</strong> This
+                              comprehensive written guide covers every aspect of
+                              platform navigation, from basic menu structure to
+                              advanced features. Includes screenshots,
+                              step-by-step instructions, and troubleshooting
+                              tips.
+                            </p>
+                            <p><strong>Sections Include:</strong></p>
+                            <ul>
+                              <li>Dashboard overview and customization</li>
+                              <li>Navigation menu structure</li>
+                              <li>Search and filter functionality</li>
+                              <li>Profile and settings management</li>
+                              <li>Keyboard shortcuts and tips</li>
+                              <li>Mobile app navigation differences</li>
+                            </ul>
+                            <div class="faq-actions">
+                              <button
+                                class="faq-action-btn"
+                                onclick="readFullArticle(this)"
+                              >
+                                <i class="fas fa-book-open"></i> Read Full
+                                Article
+                              </button>
+                              <button
+                                class="faq-action-btn"
+                                onclick="downloadPDF(this)"
+                              >
+                                <i class="fas fa-file-pdf"></i> Download PDF
+                              </button>
+                              <button
+                                class="faq-action-btn"
+                                onclick="bookmarkFAQ(this)"
+                              >
+                                <i class="fas fa-bookmark"></i> Bookmark
+                              </button>
+                              <button
+                                class="faq-action-btn"
+                                onclick="printArticle(this)"
+                              >
+                                <i class="fas fa-print"></i> Print
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Loading State -->
+                      <div class="faq-loading" id="faqLoading">
+                        <div class="loading-spinner"></div>
+                        <p>Loading more FAQs...</p>
+                      </div>
+
+                      <!-- No Results State -->
+                      <div
+                        class="faq-no-results"
+                        id="faqNoResults"
+                        style="
+                          display: none;
+                          text-align: center;
+                          padding: 2rem;
+                          color: var(--text-gray);
+                        "
+                      >
+                        <i
+                          class="fas fa-search"
+                          style="
+                            font-size: 3rem;
+                            margin-bottom: 1rem;
+                            opacity: 0.3;
+                          "
+                        ></i>
+                        <h6>No FAQs found</h6>
+                        <p>Try adjusting your search terms or filters</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- E-learning Modules -->
+              <div class="row g-4">
+                <div class="col-12">
+                  <div class="learning-section-card">
+                    <div class="learning-section-header">
+                      <h5>E-learning Modules</h5>
+                      <button
+                        class="btn btn-sm btn-outline-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#elearningInquiryModal"
+                      >
+                        <i class="fas fa-question-circle me-2"></i>Submit
+                        Inquiry
+                      </button>
+                    </div>
+                    <div class="learning-section-body">
+                      <div class="elearning-modules">
+                        <div class="elearning-module">
+                          <div class="module-icon">
+                            <i class="fas fa-user-graduate"></i>
+                          </div>
+                          <div class="module-content">
+                            <h6>Platform Basics</h6>
+                            <p>
+                              Learn the fundamentals of using the platform
+                              effectively
+                            </p>
+                            <div class="module-progress">
+                              <div class="progress">
+                                <div
+                                  class="progress-bar"
+                                  style="width: 75%"
+                                ></div>
+                              </div>
+                              <span class="progress-text">75% Complete</span>
+                            </div>
+                          </div>
+                          <div class="module-actions">
+                            <button class="btn btn-sm btn-primary">
+                              Continue
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="elearning-module">
+                          <div class="module-icon">
+                            <i class="fas fa-briefcase"></i>
+                          </div>
+                          <div class="module-content">
+                            <h6>Placement Management</h6>
+                            <p>
+                              Master the placement submission and tracking
+                              process
+                            </p>
+                            <div class="module-progress">
+                              <div class="progress">
+                                <div
+                                  class="progress-bar"
+                                  style="width: 45%"
+                                ></div>
+                              </div>
+                              <span class="progress-text">45% Complete</span>
+                            </div>
+                          </div>
+                          <div class="module-actions">
+                            <button class="btn btn-sm btn-primary">
+                              Continue
+                            </button>
+                          </div>
+                        </div>
+
+                        <div class="elearning-module">
+                          <div class="module-icon">
+                            <i class="fas fa-chart-line"></i>
+                          </div>
+                          <div class="module-content">
+                            <h6>Financial Reporting</h6>
+                            <p>
+                              Understanding financial documentation and
+                              reporting requirements
+                            </p>
+                            <div class="module-progress">
+                              <div class="progress">
+                                <div
+                                  class="progress-bar"
+                                  style="width: 0%"
+                                ></div>
+                              </div>
+                              <span class="progress-text">Not Started</span>
+                            </div>
+                          </div>
+                          <div class="module-actions">
+                            <button class="btn btn-sm btn-outline-primary">
+                              Start
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reach Out for Assistance Content -->
+            <div id="reach-out-content" class="page-content">
+              <div class="page-header">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h1 class="page-title">Reach Out for Assistance</h1>
+                    <p class="page-subtitle">
+                      Get help with platform navigation issues • Connect with
+                      Team 99 for personalized support
+                    </p>
+                  </div>
+                  <button
+                    class="btn btn-primary btn-lg"
+                    data-bs-toggle="modal"
+                    data-bs-target="#reachOutModal"
+                  >
+                    <i class="fas fa-hands-helping me-2"></i>Reach out to Team
+                    99
+                  </button>
+                </div>
+              </div>
+
+              <!-- Support Overview -->
+              <div class="row g-4 mb-4">
+                <div class="col-lg-3 col-md-6">
+                  <div class="support-stat-card">
+                    <div class="support-stat-icon bg-primary">
+                      <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="support-stat-content">
+                      <div class="support-stat-number">< 2 hrs</div>
+                      <div class="support-stat-label">
+                        Average Response Time
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                  <div class="support-stat-card">
+                    <div class="support-stat-icon bg-success">
+                      <i class="fas fa-users"></i>
+                    </div>
+                    <div class="support-stat-content">
+                      <div class="support-stat-number">24/7</div>
+                      <div class="support-stat-label">Team 99 Availability</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                  <div class="support-stat-card">
+                    <div class="support-stat-icon bg-info">
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div class="support-stat-content">
+                      <div class="support-stat-number">98%</div>
+                      <div class="support-stat-label">Satisfaction Rate</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                  <div class="support-stat-card">
+                    <div class="support-stat-icon bg-warning">
+                      <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="support-stat-content">
+                      <div class="support-stat-number">1,247</div>
+                      <div class="support-stat-label">Issues Resolved</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Support Options -->
+              <div class="row g-4 mb-4">
+                <div class="col-lg-4">
+                  <div
+                    class="support-option-card"
+                    data-bs-toggle="modal"
+                    data-bs-target="#reachOutModal"
+                    data-support-type="navigation"
+                  >
+                    <div class="support-option-icon">
+                      <i class="fas fa-compass"></i>
+                    </div>
+                    <div class="support-option-content">
+                      <h5>Platform Navigation Help</h5>
+                      <p>
+                        Get assistance with finding features, understanding the
+                        interface, or navigating between sections
+                      </p>
+                      <ul class="support-features">
+                        <li>Interface guidance</li>
+                        <li>Feature location help</li>
+                        <li>Menu navigation</li>
+                        <li>Workflow assistance</li>
+                      </ul>
+                    </div>
+                    <div class="support-option-action">
+                      <span class="btn btn-outline-primary"
+                        >Get Navigation Help</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div
+                    class="support-option-card"
+                    data-bs-toggle="modal"
+                    data-bs-target="#reachOutModal"
+                    data-support-type="technical"
+                  >
+                    <div class="support-option-icon">
+                      <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="support-option-content">
+                      <h5>Technical Support</h5>
+                      <p>
+                        Resolve technical issues, bugs, or performance problems
+                        with personalized assistance
+                      </p>
+                      <ul class="support-features">
+                        <li>Bug reporting & fixes</li>
+                        <li>Performance issues</li>
+                        <li>Login problems</li>
+                        <li>System errors</li>
+                      </ul>
+                    </div>
+                    <div class="support-option-action">
+                      <span class="btn btn-outline-primary"
+                        >Get Technical Help</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div
+                    class="support-option-card"
+                    data-bs-toggle="modal"
+                    data-bs-target="#reachOutModal"
+                    data-support-type="general"
+                  >
+                    <div class="support-option-icon">
+                      <i class="fas fa-question-circle"></i>
+                    </div>
+                    <div class="support-option-content">
+                      <h5>General Assistance</h5>
+                      <p>
+                        Get help with account questions, feature requests, or
+                        any other platform-related inquiries
+                      </p>
+                      <ul class="support-features">
+                        <li>Account management</li>
+                        <li>Feature requests</li>
+                        <li>General questions</li>
+                        <li>Best practices</li>
+                      </ul>
+                    </div>
+                    <div class="support-option-action">
+                      <span class="btn btn-outline-primary"
+                        >Get General Help</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Team 99 Information -->
+              <div class="row g-4 mb-4">
+                <div class="col-12">
+                  <div class="team99-info-card">
+                    <div class="team99-header">
+                      <div class="team99-logo">
+                        <i class="fas fa-users-cog"></i>
+                      </div>
+                      <div class="team99-title">
+                        <h4>Meet Team 99</h4>
+                        <p>Your dedicated platform support specialists</p>
+                      </div>
+                    </div>
+                    <div class="team99-content">
+                      <div class="row g-4">
+                        <div class="col-lg-6">
+                          <h6>What Team 99 Can Help With:</h6>
+                          <ul class="team99-capabilities">
+                            <li>
+                              <i
+                                class="fas fa-check-circle text-success me-2"
+                              ></i
+                              >Platform navigation and orientation
+                            </li>
+                            <li>
+                              <i
+                                class="fas fa-check-circle text-success me-2"
+                              ></i
+                              >Feature explanations and tutorials
+                            </li>
+                            <li>
+                              <i
+                                class="fas fa-check-circle text-success me-2"
+                              ></i
+                              >Troubleshooting technical issues
+                            </li>
+                            <li>
+                              <i
+                                class="fas fa-check-circle text-success me-2"
+                              ></i
+                              >Account setup and configuration
+                            </li>
+                            <li>
+                              <i
+                                class="fas fa-check-circle text-success me-2"
+                              ></i
+                              >Workflow optimization tips
+                            </li>
+                            <li>
+                              <i
+                                class="fas fa-check-circle text-success me-2"
+                              ></i
+                              >Custom training sessions
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-lg-6">
+                          <h6>Support Channels:</h6>
+                          <div class="support-channels">
+                            <div class="support-channel">
+                              <i class="fas fa-comments text-primary"></i>
+                              <div class="channel-info">
+                                <strong>Live Chat</strong>
+                                <span>Instant messaging support</span>
+                              </div>
+                            </div>
+                            <div class="support-channel">
+                              <i class="fas fa-video text-success"></i>
+                              <div class="channel-info">
+                                <strong>Video Call</strong>
+                                <span>Screen sharing sessions</span>
+                              </div>
+                            </div>
+                            <div class="support-channel">
+                              <i class="fas fa-phone text-info"></i>
+                              <div class="channel-info">
+                                <strong>Phone Support</strong>
+                                <span>Direct voice assistance</span>
+                              </div>
+                            </div>
+                            <div class="support-channel">
+                              <i class="fas fa-envelope text-warning"></i>
+                              <div class="channel-info">
+                                <strong>Email Support</strong>
+                                <span>Detailed written assistance</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="team99-cta">
+                      <button
+                        class="btn btn-primary btn-lg"
+                        data-bs-toggle="modal"
+                        data-bs-target="#reachOutModal"
+                      >
+                        <i class="fas fa-hands-helping me-2"></i>Connect with
+                        Team 99 Now
+                      </button>
+                      <p class="mt-2 text-muted">
+                        Available 24/7 • Average response time under 2 hours
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Recent Support Activity -->
+              <div class="row g-4">
+                <div class="col-12">
+                  <div class="support-activity-card">
+                    <div class="support-activity-header">
+                      <h5>Your Recent Support Interactions</h5>
+                      <button class="btn btn-sm btn-outline-primary">
+                        View All
+                      </button>
+                    </div>
+                    <div class="support-activity-body">
+                      <div class="support-activity-list">
+                        <div class="support-activity-item">
+                          <div class="activity-icon bg-success">
+                            <i class="fas fa-check"></i>
+                          </div>
+                          <div class="activity-content">
+                            <div class="activity-title">
+                              Navigation Help - Dashboard Layout
+                            </div>
+                            <div class="activity-meta">
+                              <span class="activity-date">2 days ago</span>
+                              <span class="activity-status resolved"
+                                >Resolved</span
+                              >
+                              <span class="activity-agent"
+                                >by Sarah from Team 99</span
+                              >
+                            </div>
+                            <div class="activity-description">
+                              Received guidance on customizing dashboard layout
+                              and understanding widget functionality
+                            </div>
+                          </div>
+                          <div class="activity-rating">
+                            <div class="rating-stars">
+                              <i class="fas fa-star text-warning"></i>
+                              <i class="fas fa-star text-warning"></i>
+                              <i class="fas fa-star text-warning"></i>
+                              <i class="fas fa-star text-warning"></i>
+                              <i class="fas fa-star text-warning"></i>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="support-activity-item">
+                          <div class="activity-icon bg-info">
+                            <i class="fas fa-clock"></i>
+                          </div>
+                          <div class="activity-content">
+                            <div class="activity-title">
+                              Technical Issue - Login Problems
+                            </div>
+                            <div class="activity-meta">
+                              <span class="activity-date">1 week ago</span>
+                              <span class="activity-status resolved"
+                                >Resolved</span
+                              >
+                              <span class="activity-agent"
+                                >by Mike from Team 99</span
+                              >
+                            </div>
+                            <div class="activity-description">
+                              Resolved two-factor authentication setup issues
+                              and browser compatibility problems
+                            </div>
+                          </div>
+                          <div class="activity-rating">
+                            <div class="rating-stars">
+                              <i class="fas fa-star text-warning"></i>
+                              <i class="fas fa-star text-warning"></i>
+                              <i class="fas fa-star text-warning"></i>
+                              <i class="fas fa-star text-warning"></i>
+                              <i class="far fa-star text-muted"></i>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="support-activity-item">
+                          <div class="activity-icon bg-primary">
+                            <i class="fas fa-graduation-cap"></i>
+                          </div>
+                          <div class="activity-content">
+                            <div class="activity-title">
+                              Training Session - Advanced Features
+                            </div>
+                            <div class="activity-meta">
+                              <span class="activity-date">2 weeks ago</span>
+                              <span class="activity-status completed"
+                                >Completed</span
+                              >
+                              <span class="activity-agent"
+                                >by Alex from Team 99</span
+                              >
+                            </div>
+                            <div class="activity-description">
+                              One-on-one training session covering advanced
+                              reporting and analytics features
+                            </div>
+                          </div>
+                          <div class="activity-rating">
+                            <div class="rating-stars">
+                              <i class="fas fa-star text-warning"></i>
+                              <i class="fas fa-star text-warning"></i>
+                              <i class="fas fa-star text-warning"></i>
+                              <i class="fas fa-star text-warning"></i>
+                              <i class="fas fa-star text-warning"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </main>
       </div>
@@ -1039,7 +2855,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="createJobModalLabel">
-              Create New Job Posting
+              Announce new jobs
             </h5>
             <button
               type="button"
@@ -1156,7 +2972,7 @@
               Cancel
             </button>
             <button type="button" class="btn btn-primary" onclick="createJob()">
-              Create Job Posting
+              Announce
             </button>
           </div>
         </div>
@@ -1330,6 +3146,764 @@
               onclick="createPlacement()"
             >
               Add Placement
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Report an Issue Modal -->
+    <div
+      class="modal fade"
+      id="reportIssueModal"
+      tabindex="-1"
+      aria-labelledby="reportIssueModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="reportIssueModalLabel">
+              <i class="fas fa-life-ring me-2"></i>Report an Issue
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="reportIssueForm">
+              <div class="row g-3">
+                <!-- Issue Type -->
+                <div class="col-12">
+                  <label for="issueType" class="form-label">Issue Type *</label>
+                  <select class="form-select" id="issueType" required>
+                    <option value="">Select Issue Type</option>
+                    <option value="technical">Technical Issue</option>
+                    <option value="account">Account Support</option>
+                    <option value="general">General Inquiry</option>
+                    <option value="feature">Feature Request</option>
+                    <option value="bug">Bug Report</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <!-- Priority Level -->
+                <div class="col-md-6">
+                  <label for="priorityLevel" class="form-label"
+                    >Priority Level *</label
+                  >
+                  <select class="form-select" id="priorityLevel" required>
+                    <option value="">Select Priority</option>
+                    <option value="low">Low - General question</option>
+                    <option value="medium">Medium - Affects workflow</option>
+                    <option value="high">High - Blocks critical tasks</option>
+                    <option value="urgent">Urgent - System down</option>
+                  </select>
+                </div>
+
+                <!-- Affected Area -->
+                <div class="col-md-6">
+                  <label for="affectedArea" class="form-label"
+                    >Affected Area</label
+                  >
+                  <select class="form-select" id="affectedArea">
+                    <option value="">Select Area</option>
+                    <option value="login">Login/Authentication</option>
+                    <option value="profile">Profile Management</option>
+                    <option value="placement">Placement Management</option>
+                    <option value="financials">Financial Section</option>
+                    <option value="messaging">Internal Messaging</option>
+                    <option value="navigation">Navigation/UI</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <!-- Issue Title -->
+                <div class="col-12">
+                  <label for="issueTitle" class="form-label"
+                    >Issue Title *</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="issueTitle"
+                    placeholder="Brief description of the issue"
+                    required
+                  />
+                </div>
+
+                <!-- Issue Description -->
+                <div class="col-12">
+                  <label for="issueDescription" class="form-label"
+                    >Detailed Description *</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="issueDescription"
+                    rows="4"
+                    placeholder="Please provide detailed information about the issue, including steps to reproduce if applicable"
+                    required
+                  ></textarea>
+                </div>
+
+                <!-- Steps to Reproduce -->
+                <div class="col-12">
+                  <label for="stepsToReproduce" class="form-label"
+                    >Steps to Reproduce (if applicable)</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="stepsToReproduce"
+                    rows="3"
+                    placeholder="1. First step&#10;2. Second step&#10;3. Third step"
+                  ></textarea>
+                </div>
+
+                <!-- Expected vs Actual Behavior -->
+                <div class="col-md-6">
+                  <label for="expectedBehavior" class="form-label"
+                    >Expected Behavior</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="expectedBehavior"
+                    rows="2"
+                    placeholder="What should happen?"
+                  ></textarea>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="actualBehavior" class="form-label"
+                    >Actual Behavior</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="actualBehavior"
+                    rows="2"
+                    placeholder="What actually happens?"
+                  ></textarea>
+                </div>
+
+                <!-- Browser/Device Info -->
+                <div class="col-md-6">
+                  <label for="browserInfo" class="form-label"
+                    >Browser/Device</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="browserInfo"
+                    placeholder="e.g., Chrome 120, Safari on iPhone"
+                  />
+                </div>
+
+                <!-- Contact Preference -->
+                <div class="col-md-6">
+                  <label for="contactPreference" class="form-label"
+                    >Preferred Contact Method</label
+                  >
+                  <select class="form-select" id="contactPreference">
+                    <option value="platform">Platform Messaging</option>
+                    <option value="email">Email</option>
+                    <option value="phone">Phone Call</option>
+                  </select>
+                </div>
+
+                <!-- File Attachment -->
+                <div class="col-12">
+                  <label for="attachments" class="form-label"
+                    >Attachments (Screenshots, logs, etc.)</label
+                  >
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="attachments"
+                    multiple
+                    accept=".jpg,.jpeg,.png,.gif,.pdf,.txt,.log"
+                  />
+                  <div class="form-text">
+                    Supported formats: JPG, PNG, GIF, PDF, TXT, LOG (Max 10MB
+                    per file)
+                  </div>
+                </div>
+
+                <!-- Urgency Notice -->
+                <div class="col-12">
+                  <div class="alert alert-info">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>Response Times:</strong>
+                    <ul class="mb-0 mt-2">
+                      <li>Urgent: Within 1 hour</li>
+                      <li>High: Within 4 hours</li>
+                      <li>Medium: Within 24 hours</li>
+                      <li>Low: Within 48 hours</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="submitIssueReport()"
+            >
+              <i class="fas fa-paper-plane me-2"></i>Submit Issue
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- E-learning Inquiry Modal -->
+    <div
+      class="modal fade"
+      id="elearningInquiryModal"
+      tabindex="-1"
+      aria-labelledby="elearningInquiryModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="elearningInquiryModalLabel">
+              <i class="fas fa-graduation-cap me-2"></i>Submit E-learning
+              Inquiry
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="elearningInquiryForm">
+              <div class="row g-3">
+                <!-- Inquiry Type -->
+                <div class="col-12">
+                  <label for="inquiryType" class="form-label"
+                    >Inquiry Type *</label
+                  >
+                  <select class="form-select" id="inquiryType" required>
+                    <option value="">Select Inquiry Type</option>
+                    <option value="content-request">Content Request</option>
+                    <option value="technical-support">Technical Support</option>
+                    <option value="course-feedback">Course Feedback</option>
+                    <option value="new-module">New Module Suggestion</option>
+                    <option value="accessibility">Accessibility Support</option>
+                    <option value="general">General Question</option>
+                  </select>
+                </div>
+
+                <!-- Learning Format -->
+                <div class="col-md-6">
+                  <label for="learningFormat" class="form-label"
+                    >Preferred Learning Format</label
+                  >
+                  <select class="form-select" id="learningFormat">
+                    <option value="">No Preference</option>
+                    <option value="video">Video Tutorial</option>
+                    <option value="voice">Audio/Voice Guide</option>
+                    <option value="text">Written Documentation</option>
+                    <option value="interactive">Interactive Module</option>
+                    <option value="mixed">Mixed Format</option>
+                  </select>
+                </div>
+
+                <!-- Topic Area -->
+                <div class="col-md-6">
+                  <label for="topicArea" class="form-label">Topic Area</label>
+                  <select class="form-select" id="topicArea">
+                    <option value="">Select Topic</option>
+                    <option value="platform-basics">Platform Basics</option>
+                    <option value="placement-management">
+                      Placement Management
+                    </option>
+                    <option value="financial-reporting">
+                      Financial Reporting
+                    </option>
+                    <option value="communication">Communication Tools</option>
+                    <option value="profile-management">
+                      Profile Management
+                    </option>
+                    <option value="troubleshooting">Troubleshooting</option>
+                    <option value="advanced-features">Advanced Features</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <!-- Inquiry Title -->
+                <div class="col-12">
+                  <label for="inquiryTitle" class="form-label"
+                    >Inquiry Title *</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inquiryTitle"
+                    placeholder="Brief description of your inquiry"
+                    required
+                  />
+                </div>
+
+                <!-- Detailed Description -->
+                <div class="col-12">
+                  <label for="inquiryDescription" class="form-label"
+                    >Detailed Description *</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="inquiryDescription"
+                    rows="4"
+                    placeholder="Please provide detailed information about your e-learning inquiry, including specific topics or features you'd like to learn about"
+                    required
+                  ></textarea>
+                </div>
+
+                <!-- Current Knowledge Level -->
+                <div class="col-md-6">
+                  <label for="knowledgeLevel" class="form-label"
+                    >Current Knowledge Level</label
+                  >
+                  <select class="form-select" id="knowledgeLevel">
+                    <option value="beginner">
+                      Beginner - New to the platform
+                    </option>
+                    <option value="intermediate">
+                      Intermediate - Some experience
+                    </option>
+                    <option value="advanced">
+                      Advanced - Experienced user
+                    </option>
+                    <option value="expert">
+                      Expert - Looking for advanced features
+                    </option>
+                  </select>
+                </div>
+
+                <!-- Urgency Level -->
+                <div class="col-md-6">
+                  <label for="urgencyLevel" class="form-label"
+                    >Urgency Level</label
+                  >
+                  <select class="form-select" id="urgencyLevel">
+                    <option value="low">Low - General learning</option>
+                    <option value="medium">
+                      Medium - Needed for current work
+                    </option>
+                    <option value="high">High - Blocking current tasks</option>
+                    <option value="urgent">
+                      Urgent - Critical for immediate use
+                    </option>
+                  </select>
+                </div>
+
+                <!-- Specific Questions -->
+                <div class="col-12">
+                  <label for="specificQuestions" class="form-label"
+                    >Specific Questions or Learning Objectives</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="specificQuestions"
+                    rows="3"
+                    placeholder="What specific questions do you have? What would you like to achieve after completing this learning?"
+                  ></textarea>
+                </div>
+
+                <!-- Preferred Contact Method -->
+                <div class="col-md-6">
+                  <label for="contactMethod" class="form-label"
+                    >Preferred Contact Method</label
+                  >
+                  <select class="form-select" id="contactMethod">
+                    <option value="platform">Platform Messaging</option>
+                    <option value="email">Email</option>
+                    <option value="video-call">Video Call</option>
+                    <option value="phone">Phone Call</option>
+                  </select>
+                </div>
+
+                <!-- Follow-up Preference -->
+                <div class="col-md-6">
+                  <label for="followupPreference" class="form-label"
+                    >Follow-up Preference</label
+                  >
+                  <select class="form-select" id="followupPreference">
+                    <option value="immediate">Immediate Response</option>
+                    <option value="scheduled">Schedule Learning Session</option>
+                    <option value="self-paced">Self-Paced Materials</option>
+                    <option value="group-session">
+                      Group Learning Session
+                    </option>
+                  </select>
+                </div>
+
+                <!-- Additional Resources -->
+                <div class="col-12">
+                  <label for="additionalResources" class="form-label"
+                    >Additional Resources or References</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="additionalResources"
+                    rows="2"
+                    placeholder="Any additional resources, links, or references that might help us understand your learning needs"
+                  ></textarea>
+                </div>
+
+                <!-- Learning Goals -->
+                <div class="col-12">
+                  <div class="alert alert-info">
+                    <i class="fas fa-lightbulb me-2"></i>
+                    <strong>Learning Support:</strong>
+                    <ul class="mb-0 mt-2">
+                      <li>Video tutorials with step-by-step guidance</li>
+                      <li>Audio explanations for complex processes</li>
+                      <li>Written documentation for quick reference</li>
+                      <li>Interactive modules for hands-on learning</li>
+                      <li>One-on-one support sessions when needed</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="submitElearningInquiry()"
+            >
+              <i class="fas fa-paper-plane me-2"></i>Submit Inquiry
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reach Out to Team 99 Modal -->
+    <div
+      class="modal fade"
+      id="reachOutModal"
+      tabindex="-1"
+      aria-labelledby="reachOutModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="reachOutModalLabel">
+              <i class="fas fa-hands-helping me-2"></i>Reach out to Team 99
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="reachOutForm">
+              <div class="row g-4">
+                <!-- Support Type Selection -->
+                <div class="col-12">
+                  <label class="form-label"
+                    >What type of assistance do you need? *</label
+                  >
+                  <div class="support-type-selection">
+                    <div class="support-type-option">
+                      <input
+                        type="radio"
+                        id="navigation-help"
+                        name="supportType"
+                        value="navigation"
+                        required
+                      />
+                      <label for="navigation-help" class="support-type-card">
+                        <div class="support-type-icon">
+                          <i class="fas fa-compass"></i>
+                        </div>
+                        <div class="support-type-content">
+                          <h6>Platform Navigation Help</h6>
+                          <p>
+                            Interface guidance, feature location, menu
+                            navigation
+                          </p>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="support-type-option">
+                      <input
+                        type="radio"
+                        id="technical-support"
+                        name="supportType"
+                        value="technical"
+                        required
+                      />
+                      <label for="technical-support" class="support-type-card">
+                        <div class="support-type-icon">
+                          <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="support-type-content">
+                          <h6>Technical Support</h6>
+                          <p>Bug reports, performance issues, system errors</p>
+                        </div>
+                      </label>
+                    </div>
+                    <div class="support-type-option">
+                      <input
+                        type="radio"
+                        id="general-assistance"
+                        name="supportType"
+                        value="general"
+                        required
+                      />
+                      <label for="general-assistance" class="support-type-card">
+                        <div class="support-type-icon">
+                          <i class="fas fa-question-circle"></i>
+                        </div>
+                        <div class="support-type-content">
+                          <h6>General Assistance</h6>
+                          <p>
+                            Account questions, feature requests, best practices
+                          </p>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-md-6">
+                  <label for="contactName" class="form-label"
+                    >Your Name *</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="contactName"
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label for="contactEmail" class="form-label"
+                    >Email Address *</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="contactEmail"
+                    placeholder="your.email@company.com"
+                    required
+                  />
+                </div>
+
+                <!-- Urgency Level -->
+                <div class="col-md-6">
+                  <label for="urgencyLevel" class="form-label"
+                    >Urgency Level *</label
+                  >
+                  <select class="form-select" id="urgencyLevel" required>
+                    <option value="">Select urgency level</option>
+                    <option value="low">Low - General inquiry</option>
+                    <option value="medium">Medium - Need help soon</option>
+                    <option value="high">High - Blocking my work</option>
+                    <option value="urgent">Urgent - Critical issue</option>
+                  </select>
+                </div>
+
+                <!-- Preferred Contact Method -->
+                <div class="col-md-6">
+                  <label for="preferredContact" class="form-label"
+                    >Preferred Contact Method *</label
+                  >
+                  <select class="form-select" id="preferredContact" required>
+                    <option value="">Select contact method</option>
+                    <option value="chat">Live Chat</option>
+                    <option value="video">Video Call</option>
+                    <option value="phone">Phone Call</option>
+                    <option value="email">Email</option>
+                  </select>
+                </div>
+
+                <!-- Issue Title -->
+                <div class="col-12">
+                  <label for="issueTitle" class="form-label"
+                    >Issue/Request Title *</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="issueTitle"
+                    placeholder="Brief description of your issue or request"
+                    required
+                  />
+                </div>
+
+                <!-- Detailed Description -->
+                <div class="col-12">
+                  <label for="issueDescription" class="form-label"
+                    >Detailed Description *</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="issueDescription"
+                    rows="4"
+                    placeholder="Please provide detailed information about your issue, what you were trying to do, what happened, and any error messages you received"
+                    required
+                  ></textarea>
+                </div>
+
+                <!-- Steps to Reproduce (for technical issues) -->
+                <div class="col-12" id="stepsToReproduce" style="display: none">
+                  <label for="reproductionSteps" class="form-label"
+                    >Steps to Reproduce</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="reproductionSteps"
+                    rows="3"
+                    placeholder="1. First I did...&#10;2. Then I clicked...&#10;3. The error occurred when..."
+                  ></textarea>
+                </div>
+
+                <!-- Browser/System Information -->
+                <div class="col-md-6" id="browserInfo" style="display: none">
+                  <label for="browserDetails" class="form-label"
+                    >Browser & Version</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="browserDetails"
+                    placeholder="e.g., Chrome 120, Firefox 121, Safari 17"
+                  />
+                </div>
+
+                <div class="col-md-6" id="systemInfo" style="display: none">
+                  <label for="systemDetails" class="form-label"
+                    >Operating System</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="systemDetails"
+                    placeholder="e.g., Windows 11, macOS 14, Ubuntu 22.04"
+                  />
+                </div>
+
+                <!-- Availability -->
+                <div class="col-12">
+                  <label for="availability" class="form-label"
+                    >Your Availability</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="availability"
+                    rows="2"
+                    placeholder="When are you available for a call/chat? Include your timezone if different from EST"
+                  ></textarea>
+                </div>
+
+                <!-- Previous Attempts -->
+                <div class="col-12">
+                  <label for="previousAttempts" class="form-label"
+                    >What have you already tried?</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="previousAttempts"
+                    rows="2"
+                    placeholder="Describe any troubleshooting steps you've already attempted"
+                  ></textarea>
+                </div>
+
+                <!-- File Attachments -->
+                <div class="col-12">
+                  <label for="attachments" class="form-label"
+                    >Attachments (Screenshots, Error Logs, etc.)</label
+                  >
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="attachments"
+                    multiple
+                    accept=".jpg,.jpeg,.png,.gif,.pdf,.txt,.log,.doc,.docx"
+                  />
+                  <div class="form-text">
+                    You can attach screenshots, error logs, or other relevant
+                    files (max 10MB each)
+                  </div>
+                </div>
+
+                <!-- Team 99 Information -->
+                <div class="col-12">
+                  <div class="alert alert-info">
+                    <div class="d-flex align-items-start">
+                      <i class="fas fa-info-circle me-3 mt-1"></i>
+                      <div>
+                        <h6 class="alert-heading">What happens next?</h6>
+                        <ul class="mb-0">
+                          <li>
+                            <strong>Immediate:</strong> You'll receive a
+                            confirmation email with your request ID
+                          </li>
+                          <li>
+                            <strong>Within 2 hours:</strong> A Team 99
+                            specialist will reach out via your preferred method
+                          </li>
+                          <li>
+                            <strong>Ongoing:</strong> We'll work with you until
+                            your issue is completely resolved
+                          </li>
+                          <li>
+                            <strong>Follow-up:</strong> We'll check in to ensure
+                            you're satisfied with the solution
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary btn-lg"
+              onclick="submitReachOutRequest()"
+            >
+              <i class="fas fa-paper-plane me-2"></i>Send Request to Team 99
             </button>
           </div>
         </div>
